@@ -23,8 +23,9 @@ DOM.flex.addEventListener("click", function (e) {
     active = 1;
   }
   if (e.target.className.startsWith("action")) {
+    if (targetElement) removeActive(targetElement);
     targetElement = e.target;
-    if (active) action = targetElement.textContent;
+    action = targetElement.textContent;
     activeAction(targetElement);
     num1 = takeInput();
     active = 0;
